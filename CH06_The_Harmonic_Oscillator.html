@@ -1,0 +1,131 @@
+
+<html>
+  <head><meta charset="utf-8"/>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      packages: {'[+]': ['noerrors', 'noundefined']}
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'tex2jax_ignore'
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style>
+  /* Simple, legible table styling */
+  table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+  thead { background: #f2f2f2; }
+  th, td { border: 1px solid #bbb; padding: 0.45em 0.6em; text-align: left; }
+  tbody tr:nth-child(even) { background: #fafafa; }
+</style>
+<title>CH06_The_Harmonic_Oscillator.md</title></head>
+  <body><a href='index.html'>← Back</a><hr/><h2 id="no-friction">No Friction</h2>
+<h3 id="problem-setup">Problem Setup</h3>
+<ul>
+<li>The prototype oscillator is a mass $m$ acted on by a spring force $F_{spring}=-kx$ where $x$ is the displacement from equilibrium. </li>
+</ul>
+<p><img alt="Pasted image 20250322151028.png" src="assets/Pasted image 20250322151028.png" /></p>
+<ul>
+<li>The equation for motion is hence: 
+$$m\ddot{x}+kx=0$$</li>
+<li>The solution is:
+$$x=B\sin{\omega_o t}+C\cos{\omega_o t}$$
+    where $$\omega_o=\sqrt{\frac{k}{m}}$$</li>
+<li>This is the natural frequency of the oscillator. 
+$$\cos{(\alpha+\beta)}=\cos{\alpha}\cos{\beta}-\sin{\alpha}\sin{\beta}$$
+$$A\cos{(\omega_o t + \phi)}=A\cos{\omega_o t}\cos{\phi}-A\sin{\omega_o t}\sin{\phi} = B \sin{\omega_o t} + C\cos{\omega_o t}$$</li>
+<li>The standard form of the solution is therefore:
+$$x=A\cos{(\omega_o t + \phi)}$$</li>
+</ul>
+<h3 id="energy-considerations">Energy Considerations</h3>
+<ul>
+<li>If we take the potential energy to be $0$ at $x=0$, we have
+$$U=\frac{1}{2}kx^2=\frac{1}{2}kA^2\cos^2(\omega_o t + \phi)$$</li>
+<li>The kinetic energy is: 
+$$K=\frac{1}{2}m\omega_o^2 A^2 \sin^2{(\omega_o t + \phi)}$$</li>
+<li>The total energy is
+$$E= \frac{1}{2}kA^2[\cos^2{(\omega_o t + \phi)}+\sin^2{(\omega_o t + \phi)}]= \frac{1}{2}kA^2$$</li>
+<li>Therefore, the total energy remains constant. </li>
+</ul>
+<h3 id="time-average-values">Time Average Values</h3>
+<ul>
+<li>The time average value $\langle f \rangle$ of a function $f(t)$ is given by: 
+$$\langle f \rangle = \frac{1}{(t_2-t_1)}\int_{t_1}^{t_2} f(t) \cdot dt$$</li>
+</ul>
+<h3 id="average-energy">Average Energy</h3>
+<p>$$\langle U \rangle = \frac{1}{2}kA^2 \langle \cos^2(\omega_o t + \phi) \rangle=\frac{1}{4}kA^2$$
+$$\langle K \rangle = \frac{1}{4}m\omega_o^2 A^2 = \frac{1}{4}kA^2$$
+$$\therefore \langle K \rangle = \langle U \rangle$$</p>
+<h2 id="friction">Friction</h2>
+<h3 id="solutions">Solutions</h3>
+<ul>
+<li>Discussion is restricted to viscous forces. </li>
+<li>
+<p>The friction force $f$ is therefore of the form: 
+$$f=-bv$$
+    This is explained <a href="CH01_Kinematic_Foundations.html###Viscosity">here</a>. </p>
+</li>
+<li>
+<p>The equation of motion is: 
+$$\ddot{x}+\gamma \dot{x}+\omega_o^2 x = 0$$</p>
+</li>
+<li>The result is:
+$$x = Ae^{-(\gamma/2)t}\cos{(\omega_1 t + \phi)}$$</li>
+<li>$A$ and $\phi$ again stand for arbitrary constants and: 
+$$\omega_1 = \sqrt{\omega_o^2 - \frac{\gamma^2}{4}}$$</li>
+</ul>
+<p><img alt="Pasted image 20250322160612.png" src="assets/Pasted image 20250322160612.png" /></p>
+<h3 id="complex-solutions">Complex Solutions</h3>
+<ul>
+<li>Cast the original differential equation to complex form by introducing the companion equation: $\ddot{y}+\gamma \dot{y} + \omega_o^2 y =0$. </li>
+<li>Multiplying this equation by $i$ yields a new differential equation: 
+$$\ddot{z} + \gamma \dot{y} + \omega_o^2 y = 0$$</li>
+<li>Either real or imaginary part of $z$ would be an acceptable solution for the equation of motion. </li>
+<li>Since the coefficients of $z$ are all constants, the natural choice for the solution is: 
+$$z=z_0 e^{\alpha t}$$
+    where $z_0$ and $\alpha$ are independent of $t$. 
+$$\alpha^2 z_0 e^{\alpha t} + \alpha \gamma z_0 e^{\alpha t} + \omega_o^2z_0e^{\alpha t} = 0$$
+$$\alpha^2 + \alpha \gamma + \omega_o^2 = 0$$</li>
+<li>The solution is:
+$$\alpha = - \frac{\gamma}{2} \pm \sqrt{\frac{\gamma^2}{4}-\omega_o^2}$$</li>
+<li>Case 1: $\gamma^2 &lt; 4\omega_o^2$ (light damping),
+    $$\alpha=-\frac{\gamma}{2} \pm i\sqrt{\omega_o^2-\frac{\gamma^2}{4}}=-\frac{\gamma}{2} \pm i\omega_1$$
+    The solution is
+    $$z=e^{-(\gamma/2)t}(z_1e^{i\omega_1t}+z_2 e^{-i\omega_1 t})$$
+    The real part $x$ is: 
+    $$x=Ae^{-(\gamma/2)t}\cos{(\omega_1 t + \phi)}$$</li>
+<li>Case 2: $\gamma^2/4 &gt; \omega_o^2$ (Heavy damping).<br />
+    In this case $\sqrt{\gamma^2/4 - \omega_o^2}$ is real and we get the solution for $\alpha$
+    $$\alpha=-\frac{\gamma}{2}\pm \frac{\gamma}{2}\sqrt{1-\frac{4\omega_o^2}{\gamma^2}}$$
+    Both roots are negative, giving us: 
+    $$x=Ae^{-|\alpha_1|t}+Be^{-|\alpha_2|t}$$
+    This is an overdamped motion showing no oscillatory behavior. </li>
+<li>Case 3: $\gamma^2/4 = \omega_o^2$ (Critical Damping)
+    $$\alpha = -\frac{\gamma}{2}$$
+    The corresponding solution is
+    $$x=u(t)e^{-(\gamma/2)t}$$
+    $$u=a+bt$$
+    and the general solution is
+    $$x=Ae^{-(\gamma/2)t}+Bte^{-(\gamma/2)t}$$</li>
+</ul>
+<h2 id="forced-harmonic-oscillator">Forced Harmonic Oscillator</h2>
+<ul>
+<li>If the motion of the oscillating mass is opposed by a viscous retarding force and is driven by some external force: 
+$$\ddot{x}+\gamma\dot{x}+\omega_o^2x = \frac{F_0}{m}\cos{\omega t}$$
+$$x=A\cos{(\omega t + \phi)}$$
+$$A= \frac{F_o}{m}\frac{1}{[(\omega_o^2-\omega^2)^2+(\omega \gamma)^2]^{0.5}}$$
+$$\phi = \arctan\left(\frac{\gamma \omega}{\omega^2 - \omega_o^2}\right)$$</li>
+</ul>
+<p><img alt="Pasted image 20250322194754.png" src="assets/Pasted image 20250322194754.png" /></p>
+<p>$$K(t) = \frac{1}{2} mv^2 = \frac{1}{2}m\omega^2 A^2 \sin^2(\omega t + \phi)$$
+$$U(t) = \frac{1}{2}kx^2=\frac{1}{2}kA^2\cos^2{(\omega t + \phi)}$$
+$$\langle K \rangle = \frac{1}{4}m\omega^2 A^2$$
+$$\langle U \rangle = \frac{1}{4}kA^2$$
+$$\langle E \rangle = \frac{1}{4} A^2 (m\omega^2 + k)$$</p>
+<hr /></body>
+</html>

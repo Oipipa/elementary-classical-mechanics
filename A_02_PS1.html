@@ -1,0 +1,176 @@
+
+<html>
+  <head><meta charset="utf-8"/>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      packages: {'[+]': ['noerrors', 'noundefined']}
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'tex2jax_ignore'
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style>
+  /* Simple, legible table styling */
+  table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+  thead { background: #f2f2f2; }
+  th, td { border: 1px solid #bbb; padding: 0.45em 0.6em; text-align: left; }
+  tbody tr:nth-child(even) { background: #fafafa; }
+</style>
+<title>A_02_PS1.md</title></head>
+  <body><a href='index.html'>← Back</a><hr/><ol>
+<li>A long straight trench, with rectangular cross section, has been dug in otherwise horizontal ground. The width of the trench is $d$ and its depth $2d$. A particle is projected at speed $v$, where $v^2 = \lambda dg$, at an angle $\alpha$ to the horizontal, from a point on the ground a distance $d$ from the nearer edge of the trench. The vertical plane in which it moves is perpendicular to the trench.<ul>
+<li>The particle lands on the base of the trench without first touching either of its sides.<ul>
+<li>By considering the vertical displacement of the particle when its horizontal displacement is $d$, show that $(\tan \alpha - \lambda)^2 &lt; \lambda^2 - 1$ and deduce that $\lambda &gt; 1$. </li>
+<li>Show also that  $(2 \tan \alpha - \lambda)^2 &gt; \lambda^2 + 4(\lambda - 1)$ and deduce that $\alpha &gt; 45^\circ$.</li>
+</ul>
+</li>
+<li>Show that, provided $\lambda &gt; 1$, $\alpha$ can always be chosen so that the particle lands on the base of the trench without first touching either of its sides.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Solution:</strong></p>
+<p>To show that $(\tan \alpha - \lambda)^2 &lt; \lambda^2 - 1$ and deduce that $\lambda &gt; 1$, consider the vertical displacement of the particle when its horizontal displacement is $d$.</p>
+<p>The particle is projected from a point on the ground at $(0, 0)$ with speed $v$ at an angle $\alpha$ to the horizontal, where $v^2 = \lambda d g$. The trench has a width $d$ and depth $2d$, with the nearer edge at $x = d$ and the base at $y = -2d$.</p>
+<p>The horizontal displacement at time $t$ is given by:
+$$
+x = v \cos \alpha \cdot t
+$$
+When $x = d$, solve for $t$:
+$$
+d = v \cos \alpha \cdot t_d \implies t_d = \frac{d}{v \cos \alpha}
+$$</p>
+<p>The vertical displacement at time $t$ is:
+$$
+y = v \sin \alpha \cdot t - \frac{1}{2} g t^2
+$$
+At $t = t_d$, the vertical displacement $y_d$ is:
+$$
+y_d = v \sin \alpha \cdot \left( \frac{d}{v \cos \alpha} \right) - \frac{1}{2} g \left( \frac{d}{v \cos \alpha} \right)^2 = d \tan \alpha - \frac{1}{2} g \frac{d^2}{v^2 \cos^2 \alpha}
+$$
+Substitute $v^2 = \lambda d g$:
+$$
+y_d = d \tan \alpha - \frac{1}{2} g \frac{d^2}{\lambda d g \cos^2 \alpha} = d \tan \alpha - \frac{d}{2 \lambda \cos^2 \alpha}
+$$
+Using $\sec^2 \alpha = 1 + \tan^2 \alpha$, so $\frac{1}{\cos^2 \alpha} = 1 + \tan^2 \alpha$:
+$$
+y_d = d \tan \alpha - \frac{d}{2 \lambda} (1 + \tan^2 \alpha)
+$$
+Let $t = \tan \alpha$:
+$$
+y_d = d \left( t - \frac{1}{2 \lambda} (1 + t^2) \right)
+$$</p>
+<p>For the particle to land on the base without first touching the sides, it must clear the nearer edge at $x = d$. This requires that at $x = d$, the particle is above ground level, so $y_d &gt; 0$ (if $y_d = 0$, it would touch the edge, which is not allowed). Thus:
+$$
+t - \frac{1}{2 \lambda} (1 + t^2) &gt; 0
+$$
+Multiply both sides by $2\lambda$ (since $\lambda &gt; 0$):
+$$
+2\lambda t - (1 + t^2) &gt; 0
+$$
+Rearrange:
+$$
+-t^2 + 2\lambda t - 1 &gt; 0
+$$
+Multiply by $-1$ (reversing the inequality):
+$$
+t^2 - 2\lambda t + 1 &lt; 0
+$$
+This quadratic in $t$ can be written as:
+$$
+(t - \lambda)^2 - \lambda^2 + 1 &lt; 0 \implies (t - \lambda)^2 &lt; \lambda^2 - 1
+$$
+Substituting back $t = \tan \alpha$:
+$$
+(\tan \alpha - \lambda)^2 &lt; \lambda^2 - 1
+$$</p>
+<p>For the inequality $(\tan \alpha - \lambda)^2 &lt; \lambda^2 - 1$ to hold, $\lambda^2 - 1$ must be positive. If $\lambda \leq 1$, then $\lambda^2 - 1 \leq 0$, and $(\tan \alpha - \lambda)^2 \geq 0$, so $(\tan \alpha - \lambda)^2 &lt; \lambda^2 - 1$ cannot hold for any $\alpha$. Thus, $\lambda &gt; 1$ is required for the inequality to be possible.</p>
+<hr />
+<ol>
+<li>
+<p>A triangular prism lies on a horizontal plane. One of the rectangular faces of the prism is vertical; the second is horizontal and in contact with the plane; the third, oblique rectangular face makes an angle $\alpha$ with the horizontal. The two triangular faces of the prism are right angled triangles and are vertical. The prism has mass $M$ and it can move without friction across the plane. A particle of mass $m$ lies on the oblique surface of the prism. The contact between the particle and the plane is rough, with coefficient of friction $\mu$.</p>
+<ul>
+<li>Show that if $\mu &lt; \tan \alpha$, then the system cannot be in equilibrium.
+    Let $\mu = \tan \lambda$, with $0 &lt; \lambda &lt; \alpha &lt; \frac{1}{4}\pi$. A force $P$ is exerted on the vertical rectangular face of the prism, perpendicular to that face and directed towards the interior of the prism. The particle and prism accelerate, but the particle remains in the same position relative to the prism.</li>
+<li>Show that the magnitude, $F$, of the frictional force between the particle and the prism is
+    $$
+    F = \frac{m}{M + m} \left| (M + m)g \sin \alpha - P \cos \alpha \right|.
+    $$</li>
+<li>Find a similar expression for the magnitude, $N$, of the normal reaction between the particle and the prism.</li>
+<li>Hence show that the force $P$ must satisfy</li>
+</ul>
+<p>$$
+    (M + m)g \tan(\alpha - \lambda) \leq P \leq (M + m)g \tan(\alpha + \lambda).
+$$</p>
+</li>
+</ol>
+<p><strong>Solution</strong></p>
+<hr />
+<ol>
+<li>
+<p>A truck of mass $M$ is connected by a light, rigid tow-bar, which is parallel to the ground, to a trailer of mass $kM$. A constant driving force $D$ which is parallel to the ground acts on the truck, and the only resistance to motion is a frictional force acting on the trailer, with coefficient of friction $\mu$.</p>
+</li>
+<li>
+<p>When the truck pulls the trailer up a slope which makes an angle $\alpha$ to the horizontal, the acceleration is $a_1$ and there is a tension $T_1$ in the tow-bar.</p>
+</li>
+<li>When the truck pulls the trailer on horizontal ground, the acceleration is $a_2$ and there is a tension $T_2$ in the tow-bar.</li>
+<li>When the truck pulls the trailer down a slope which makes an angle $\alpha$ to the horizontal, the acceleration is $a_3$ and there is a tension $T_3$ in the tow-bar.</li>
+</ol>
+<p>All accelerations are taken to be positive when in the direction of motion of the truck.
+- Show that $T_1 = T_3$ and that 
+$$
+M(a_1 + a_3 - 2a_2) = 2(T_2 - T_1).
+$$</p>
+<ul>
+<li>
+<p>It is given that $\mu &lt; 1$.</p>
+<ul>
+<li>
+<p>Show that<br />
+  $$
+  a_2 &lt; \tfrac{1}{2}(a_1 + a_3) &lt; a_3.
+  $$</p>
+</li>
+<li>
+<p>Show further that<br />
+  $$
+  a_1 &lt; a_2.
+  $$</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<hr />
+<ol>
+<li>
+<p>In this question, the $x$- and $y$-axes are horizontal and the $z$-axis is vertically upwards.</p>
+<ul>
+<li>A particle $P_\alpha$ is projected from the origin with speed $u$ at an acute angle $\alpha$ above the positive $x$-axis. The curve $E$ is given by $z = A - Bx^2$ and $y = 0$. If $E$ and the trajectory of $P_\alpha$ touch exactly once, show that
+$$
+u^2 - 2gA = u^2(1 - 4AB)\cos^2 \alpha.
+$$
+    $E$ and the trajectory of $P_\alpha$ touch exactly once for all $\alpha$ with $0 &lt; \alpha &lt; \tfrac{1}{2}\pi$. Write down the values of $A$ and $B$ in terms of $u$ and $g$.</li>
+</ul>
+<p>An explosion takes place at the origin and results in a large number of particles being simultaneously projected with speed $u$ in different directions. You may assume that all the particles move freely under gravity for $t \geq 0$.</p>
+<ul>
+<li>Describe the set of points which can be hit by particles from the explosion, explaining your answer.</li>
+<li>Show that, at a time $t$ after the explosion, the particles lie on a sphere whose centre and radius you should find.</li>
+<li>Another particle $Q$ is projected horizontally from the point $(0, 0, A)$ with speed $u$ in the positive $x$ direction. Show that, at all times, $Q$ lies on the curve $E$.</li>
+<li>Show that for particles $Q$ and $P_\alpha$ to collide, $Q$ must be projected a time 
+$$
+\frac{u(1 - \cos \alpha)}{g \sin \alpha}
+$$
+    after the explosion.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Solution:</strong></p>
+<hr /></body>
+</html>

@@ -1,0 +1,89 @@
+
+<html>
+  <head><meta charset="utf-8"/>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      packages: {'[+]': ['noerrors', 'noundefined']}
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'tex2jax_ignore'
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style>
+  /* Simple, legible table styling */
+  table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+  thead { background: #f2f2f2; }
+  th, td { border: 1px solid #bbb; padding: 0.45em 0.6em; text-align: left; }
+  tbody tr:nth-child(even) { background: #fafafa; }
+</style>
+<title>CH04_Central_Forces.md</title></head>
+  <body><a href='index.html'>← Back</a><hr/><h2 id="the-one-body-problem">The One-body Problem</h2>
+<ul>
+<li>Consider an isolated system consisting of two particles interacting under a central force $f(r)$. The masses of the particles are $m_1$ and $m_2$ and their position vectors are $\textbf{r}_1$ and $\textbf{r}_2$. </li>
+</ul>
+<p><img alt="Pasted image 20250320143308.png" src="assets/Pasted image 20250320143308.png" /></p>
+<p>$$\textbf{r}=\textbf{r}_1-\textbf{r}_2 \Rightarrow r=|\textbf{r}|$$
+$$m_1\ddot{\textbf{r}_1}=f(r)\hat{\textbf{r}}$$
+$$m_2\ddot{\textbf{r}_2}=-f(r)\hat{\textbf{r}}$$
+- The force is attractive for $f(r)&lt;0$ and repulsive for $f(r)&gt;0$. 
+- Center of mass vector: 
+$$\textbf{R}=\frac{m_1\textbf{r}_1+m_2\textbf{r}_2}{m_1+m_2}$$
+- Since there's no external forces: $\ddot{\textbf{R}}=0$, which has the solution:
+$$\textbf{R}=\textbf{R}_o + \textbf{V}t$$
+    The constant vectors $\textbf{R}_o$ and $\textbf{V}$ depend on the choice of coordinate system/initial conditions. 
+- Solving for $r_1$ and $r_2$, 
+$$\textbf{r}_1=\textbf{R}+\left(\frac{m_2}{m_1+m_2}\right)\textbf{r}$$
+$$\textbf{r}_2=\textbf{R}-\left(\frac{m_1}{m_1+m_2}\right)\textbf{r}$$</p>
+<h2 id="general-properties-of-central-force-motion">General Properties of Central Force Motion</h2>
+<h3 id="motion-is-confined-to-a-plane">Motion is confined to a plane</h3>
+<ul>
+<li>The reduced mass $\mu$ is used to turn a two-body problem into an equivalent one-body problem:
+$$\mu=\frac{m_1m_2}{m_1+m_2}$$</li>
+<li>We can simply choose, without loss of generality, a polar coordinate system on the $xy$-plane to obtain the following pair of equations:
+$$\mu(\ddot{r}-r\dot{\theta})=f(r)$$
+$$\mu(r\ddot{\theta}+2\dot{r}\dot{\theta})=0$$</li>
+</ul>
+<h3 id="energy-and-angular-momentum-are-constants">Energy and Angular Momentum are constants</h3>
+<ul>
+<li>The angular momentum of $\mu$ has magnitude: $l=\mu r v_\theta = \mu r^2 \dot{\theta}$. </li>
+<li>The total energy of $\mu$ is: $E=\frac{1}{2} \mu v^2 + U(r)= \frac{1}{2}(\dot{r}^2+r^2\dot{\theta}^2) +U(r)$</li>
+<li>The potential energy is given by:
+$$U(r)-U(r_a)=-\int_{r_a}^rf(r) \cdot dr$$</li>
+<li>We can obtain the following equation using $l=\mu r v_\theta$: 
+$$E=\frac{1}{2}\mu \dot{r}^2+ \frac{1}{2}\frac{l^2}{\mu r^2} +U(r)$$</li>
+<li>Introduce $U_{eff}(r) = \frac{1}{2} \frac{l^2}{\mu r^2} + U(r)$, the effective potential energy, so 
+$$E=\frac{1}{2}\mu \dot{r}^2 + U_{eff}(r)$$</li>
+<li>The formal solution for $r$ is given by, 
+$$\frac{dr}{dt}=\sqrt{\frac{2}{\mu}(E-U_{eff})}$$</li>
+<li>The formal solution for $\theta$ is given by, 
+$$\frac{d\theta}{dt}=\frac{l}{\mu r^2} \Rightarrow \theta-\theta_o = \int_{t_o}^t \frac{l}{\mu r^2} \cdot dt$$</li>
+<li>And $\frac{d\theta}{dr}$ can be obtained as:
+$$\frac{d\theta}{dr}=\frac{l}{\mu r^2} \frac{1}{\sqrt{(2/\mu) (E-U_{eff})}}$$</li>
+</ul>
+<h2 id="planetary-motion">Planetary Motion</h2>
+<ul>
+<li>The potential function is given by: 
+$$U(r)=-G\frac{Mm}{r} = -\frac{C}{r}$$</li>
+<li>We can transform the equation for $\theta'(r)$ as:
+$$\theta-\theta_o=l\int \frac{1}{r(2\mu Er^2 + 2\mu Cr - l^2)^{0.5}} \cdot dr$$</li>
+<li>The result is:
+$$\theta-\theta_o=\arcsin{\frac{\mu Cr - l^2}{r\sqrt{\mu^2 C^2 + 2\mu E l^2}}}$$</li>
+<li>Solving for $r$: 
+$$r=\frac{(l^2/\mu C)}{1-\sqrt{1+(2El^2 / \mu C^2)}\sin{(\theta - \theta_o)}}$$</li>
+<li>Eccentricity of orbit:
+$$\epsilon = \sqrt{1+\frac{2El^2}{\mu C^2}}$$</li>
+<li>Introducing the parameter $r_o = \frac{l^2}{\mu C}$, 
+$$r=\frac{r_o}{1-\epsilon\cos{\theta}}$$
+$$\sqrt{x^2+y^2}-\epsilon x = r_o$$</li>
+<li>Alternatively, 
+$$(1-\epsilon^2)x-2r_o \epsilon x + y^2 = r_o^2$$</li>
+</ul>
+<hr /></body>
+</html>

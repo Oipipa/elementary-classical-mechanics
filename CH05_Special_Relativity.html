@@ -1,0 +1,346 @@
+
+<html>
+  <head><meta charset="utf-8"/>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      packages: {'[+]': ['noerrors', 'noundefined']}
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'tex2jax_ignore'
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style>
+  /* Simple, legible table styling */
+  table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+  thead { background: #f2f2f2; }
+  th, td { border: 1px solid #bbb; padding: 0.45em 0.6em; text-align: left; }
+  tbody tr:nth-child(even) { background: #fafafa; }
+</style>
+<title>CH05_Special_Relativity.md</title></head>
+  <body><a href='index.html'>← Back</a><hr/><h2 id="why">Why?</h2>
+<h3 id="postulates">Postulates</h3>
+<ol>
+<li>The laws of physics have the same form in all inertial systems. </li>
+<li>The velocity of light in empty space is a universal constant, the same for all observers.</li>
+<li>The gallelian transformation mentioned in <a href="CH01_Kinematic_Foundations.html">kinematic foundations</a> cannot apply to the second postulate. </li>
+<li>This brought in the need for Lorentz transformations. </li>
+</ol>
+<h2 id="how">How?</h2>
+<ul>
+<li>Just divide or multiply by $\sqrt{1-v^2/c^2}$! (not a factorial)</li>
+<li>It might be a bit more complicated than that I guess. </li>
+</ul>
+<h2 id="relativistic-kinematics">Relativistic Kinematics</h2>
+<h3 id="lorentz-transformations">Lorentz Transformations</h3>
+<ul>
+<li>We solve for a linear change of coordinates $(x,y,t)\mapsto(x',y',t')$ that ensures both:<ol>
+<li><strong>Uniform relative motion</strong> along the $x$-axis with speed $v$.  </li>
+<li><strong>Invariance of the speed of light</strong> (so that a pulse traveling at $c$ in one frame still travels at $c$ in the other).</li>
+</ol>
+</li>
+<li>We suppose that $x'$ and $t'$ depend linearly on $x$ and $t$ (and trivially $y' = y$ if motion is only along $x$). Symbolically,</li>
+</ul>
+<p>$$
+\begin{cases}
+x' = A\,x \;+\; B\,t,\\
+t' = C\,x \;+\; D\,t,\\
+y' = y.
+\end{cases}
+$$</p>
+<ul>
+<li>The constants $A, B, C, D$ must be found from physical requirements.</li>
+<li>From the point of view of the $(x,y,t)$ system, the origin of $(x',y',t')$ moves along the $x$-axis with speed $v$. In other words, the event “$x' = 0$” must coincide with $x = v t$. That enforces one relationship between $A$ and $B$.</li>
+<li>From the point of view of the primed system, the origin of $(x,y,t)$ is seen to move with speed $-v$ along the $x'$-axis. That sets up another equation that ties $C$ and $D$ to $A$ and $B$.</li>
+<li>To respect the principle of relativity, a light pulse that moves at speed $c$ along the $x$-axis in one frame must also be measured to move at speed $c$ in the other. Technically, this is the condition</li>
+</ul>
+<p>$$
+x = c t \quad \Longleftrightarrow \quad x' = c\,t'.
+$$</p>
+<ul>
+<li>Because the transformations are linear, one can also look at a pulse traveling in the $y$ direction (or any other direction) and demand the same speed $c$. These conditions pin down $A,B,C,D$ so that</li>
+</ul>
+<p>$$
+A = \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}, 
+\quad
+B = -\gamma\,\frac{v}{c}, 
+\quad
+C = -\gamma\,\frac{v}{c}, 
+\quad
+D = \gamma.
+$$</p>
+<ul>
+<li>Rewriting them in the usual form gives the standard Lorentz transformation equations:</li>
+</ul>
+<p>$$
+\begin{cases}
+x' = \gamma \bigl(x - v t\bigr),\\
+t' = \gamma \bigl(t - \frac{v\,x}{c^2}\bigr),\\
+y' = y.
+\end{cases}
+$$</p>
+<ul>
+<li><strong>$\gamma$</strong> is often called the <em>Lorentz factor</em>, and it “stretches” time and length in a way that preserves the constancy of the speed of light.</li>
+<li>The transformation shows how coordinates of events seen by one inertial observer (with axes $(x,y,t)$) are related to coordinates of the same events measured by another inertial observer moving at speed $v$ along $x$.  </li>
+</ul>
+<h3 id="the-lorentz-contraction">The Lorentz Contraction</h3>
+<ol>
+<li><strong>Setup</strong>  <ul>
+<li>Consider a stick at rest in the primed coordinate system $(x', y', t')$.  </li>
+<li>The stick lies along the $x'$-axis, with endpoints at $x'_A$ and $x'_B$.  </li>
+</ul>
+</li>
+</ol>
+<p><img alt="Pasted image 20250323114916.png" src="assets/Pasted image 20250323114916.png" /></p>
+<ul>
+<li>Its <strong>proper length</strong> (also called rest length) is<br />
+    $$
+     \ell_0 = x'_B - x'_A.
+     $$</li>
+<li>
+<p>In the <em>lab frame</em> (the unprimed system $(x,y,t)$), the stick moves with speed $v$ along the $x$-axis.</p>
+</li>
+<li>
+<p><strong>Observing the Length in the Lab Frame</strong>  </p>
+<ul>
+<li>To measure the stick’s length $\ell$ in the lab frame, both endpoints must be measured <em>at the same time</em> in that frame.  </li>
+<li>Let that common measurement time in the lab frame be $t$.</li>
+</ul>
+</li>
+<li>
+<p><strong>Applying the Lorentz Transformation</strong>  </p>
+<ul>
+<li>The Lorentz transformation for motion along the $x$-axis is:
+$$
+ x' = \gamma \bigl( x - vt \bigr), 
+ \quad
+ t' = \gamma \Bigl(t - \frac{v\,x}{c^2}\Bigr),
+$$
+ with $\displaystyle \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\,.$</li>
+</ul>
+</li>
+<li>
+<p><strong>Endpoints in the Lab Frame</strong>  </p>
+<ul>
+<li>In the stick’s rest frame, the endpoints are $x'_A$ and $x'_B$.  </li>
+<li>In the lab frame at time $t$, those points correspond to $x_A(t)$ and $x_B(t)$ such that
+$$
+ x'_A = \gamma \bigl( x_A - vt \bigr),
+ \quad
+ x'_B = \gamma \bigl( x_B - vt \bigr).
+$$</li>
+</ul>
+</li>
+<li>
+<p><strong>The Observed (Contracted) Length</strong>  </p>
+<ul>
+<li>The lab-frame length of the stick at time $t$ is $\ell = x_B - x_A$.  </li>
+<li>By subtracting the Lorentz-transformed coordinates, one finds:
+ $$
+ \ell = \frac{\ell_0}{\gamma} \;=\;\ell_0 \sqrt{1 - \frac{v^2}{c^2}}.
+ $$</li>
+<li>Hence, the length observed in the lab frame is <em>shorter</em> than the rest length $\ell_0$.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Physical Interpretation</strong>  </p>
+<ul>
+<li>This phenomenon is <strong>Lorentz contraction</strong>: an object in motion along your axis of observation appears contracted.  </li>
+<li>As $v \to c$, $\ell \to 0$ for the direction of motion. </li>
+</ul>
+</li>
+</ul>
+<h3 id="time-dilation">Time Dilation</h3>
+<ol>
+<li>
+<p><strong>Proper Time Interval</strong>  </p>
+<ul>
+<li>Consider a clock at rest in the $(x',y',t')$ frame.  </li>
+<li>Two events, $A$ and $B$, occur <em>at the same spatial location</em> $x'_0$ in that rest frame but at different times $t'_A$ and $t'_B$.  </li>
+<li>The time interval between the two events in the rest frame is<br />
+ $$
+ \tau = t'_B - t'_A.
+ $$</li>
+<li>$\tau$ is called the <strong>proper time</strong> for these events (because it is measured where they occur).</li>
+</ul>
+</li>
+<li>
+<p><strong>Time Interval in the Lab Frame</strong>  </p>
+<ul>
+<li>In the lab frame $(x,y,t)$, the same two events occur at times $t_A$ and $t_B$.  </li>
+<li>We want to relate $T = t_B - t_A$ to the proper time $\tau$.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using the Lorentz Transformation</strong>  </p>
+<ul>
+<li>The time transformation is:
+ $$
+ t = \gamma \Bigl( t' + \frac{v\,x'}{c^2}\Bigr).
+ $$</li>
+<li>Because $x'_0$ is fixed (same location for both events), $x'_A = x'_B = x'_0$.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Deriving Time Dilation</strong>  </p>
+<ul>
+<li>Write down $t_A$ and $t_B$:
+ $$
+ t_A = \gamma \Bigl(t'_A + \frac{v\,x'_0}{c^2}\Bigr), 
+ \quad
+ t_B = \gamma \Bigl(t'_B + \frac{v\,x'_0}{c^2}\Bigr).
+ $$</li>
+<li>Subtract to find $T = t_B - t_A$:
+ $$
+ T 
+ = \gamma \bigl( t'_B - t'_A \bigr)
+ = \gamma\,\tau.
+ $$</li>
+<li>Thus,
+ $$
+ T = \gamma \,\tau 
+ = \frac{\tau}{\sqrt{1 - \frac{v^2}{c^2}}}.
+ $$</li>
+</ul>
+</li>
+<li>
+<p><strong>Physical Meaning</strong>  </p>
+<ul>
+<li>The time interval measured in the lab frame is <em>larger</em> than the proper time interval $\tau$. </li>
+<li>This is <strong>time dilation</strong>: a moving clock (moving relative to the observer) “runs slower” than one at rest relative to the observer.  </li>
+<li>If $v$ is close to $c$, $\gamma$ becomes very large, and the moving clock appears <em>significantly</em> slowed down.</li>
+</ul>
+</li>
+</ol>
+<h3 id="doppler-shift">Doppler Shift</h3>
+<h4 id="doppler-shift-for-sound-in-a-medium">Doppler Shift for Sound in a Medium</h4>
+<ol>
+<li><strong>Basic Setup</strong>  <ul>
+<li>Sound waves travel through a material medium (e.g., air) with speed $w$, determined by the properties of the medium.  </li>
+<li>The motion of the <em>source</em> or the <em>observer</em> relative to the medium affects the observed frequency.  </li>
+</ul>
+</li>
+<li><strong>Moving Source (Classical)</strong>  <ul>
+<li>Suppose the source moves toward a stationary observer at speed $v$ (along the line joining source and observer).  </li>
+<li>The source emits pulses at frequency $\nu_0$ (or period $\tau_0 = 1/\nu_0$).  </li>
+<li>Because the source advances toward each newly emitted pulse, the <em>spacing</em> between successive pulses shrinks in the medium.  </li>
+<li>The distance between pulses becomes
+ $$
+ L = w \,\tau_0 - v \,\tau_0 
+   = (w - v)\,\frac{1}{\nu_0}.
+ $$</li>
+</ul>
+</li>
+<li>Hence, the observer sees pulses arrive at a rate
+     $$
+     \nu_D = \frac{w}{L} 
+           = \nu_0 \,\frac{w}{w-v}
+           = \nu_0 \,\frac{1}{1 - (v/w)}.
+     $$</li>
+<li>
+<p>For $v&gt;0$ (approaching), $\nu_D &gt; \nu_0$; for $v&lt;0$ (receding), $\nu_D &lt; \nu_0$.</p>
+</li>
+<li>
+<p><strong>Moving Observer (Classical)</strong>  </p>
+<ul>
+<li>If instead the source is at rest in the medium and the <em>observer</em> moves at speed $v$ toward the source:  </li>
+<li>The wavefronts still travel outward at speed $w$, but the observer intercepts them more rapidly.  </li>
+<li>The effective speed at which wavefronts strike the observer is $w + v$, and the separation between wave crests (in the medium) is $L = w \cdot \tau_0 = w/\nu_0$.  </li>
+<li>So
+ $$
+ \nu_D = \frac{w + v}{L}
+       = \nu_0 \,\frac{w + v}{w}
+       = \nu_0 \,\Bigl(1 + \frac{v}{w}\Bigr).
+ $$</li>
+</ul>
+</li>
+<li>Notice that for sound, the formula differs between a moving source and a moving observer because there <em>is</em> a preferred frame: the rest frame of the medium.</li>
+</ol>
+<h4 id="relativistic-doppler-effect-light">Relativistic Doppler Effect (Light)</h4>
+<ol>
+<li>
+<p><strong>No Preferred Frame</strong>  </p>
+<ul>
+<li>Light propagates in <em>vacuum</em> with speed $c$, independent of any observer’s motion.  </li>
+<li>Special relativity forbids singling out a “medium at rest,” so the shift <em>cannot</em> depend on who is “really moving.”  </li>
+<li>Only the <em>relative velocity</em> $v$ matters.</li>
+</ul>
+</li>
+<li>
+<p><strong>Time Dilation</strong>  </p>
+<ul>
+<li>If a light source flashes at period $\tau_0$ in its own rest frame, then to an observer who sees the source moving at speed $v$, that period appears dilated:
+ $$
+ \tau = \gamma \,\tau_0, 
+ \quad 
+ \gamma = \frac{1}{\sqrt{1 - \tfrac{v^2}{c^2}}}.
+ $$</li>
+<li>This affects how often flashes are received.</li>
+</ul>
+</li>
+<li>
+<p><strong>Observed Frequency (Along Line of Motion)</strong>  </p>
+<ul>
+<li>The <em>relativistic Doppler formula</em> for light when the source moves <em>directly</em> toward or away from the observer is
+ $$
+ \nu_D 
+ = \nu_0 \,\sqrt{\frac{1 + \tfrac{v}{c}}{1 - \tfrac{v}{c}}}.
+ $$</li>
+<li>Equivalently,
+ $$
+ \nu_D
+ = \nu_0 \,\frac{1}{1 - \tfrac{v}{c}}
+   \quad (\text{approaching}),
+   \quad
+   \text{or}
+   \quad
+   \nu_D
+   = \nu_0 \,\frac{1}{1 + \tfrac{v}{c}}
+   \quad (\text{receding}),
+ $$
+ in certain sign conventions.  The most common compact form is
+ $$
+ \nu_D = \nu_0 \,\sqrt{\frac{1 + \frac{v}{c}}{1 - \frac{v}{c}}}.
+ $$</li>
+</ul>
+</li>
+<li>
+<p><strong>Off-Axis Motion</strong>  </p>
+<ul>
+<li>If the source moves at an angle $\theta$ relative to the line from source to observer, one finds a more general formula:
+ $$
+ \nu_D
+ = \nu_0 \,\sqrt{1 - \frac{v^2}{c^2}}
+   \,\Big/\bigl[1 - \tfrac{v}{c}\cos \theta\bigr].
+ $$</li>
+<li>Here, $\theta$ is the angle measured in the observer’s rest frame.  </li>
+<li>For $\theta = 0$ (directly along the line of motion), this reduces to the earlier 1D result. </li>
+</ul>
+</li>
+</ol>
+<h2 id="relativistic-momentum-and-energy">Relativistic Momentum and Energy</h2>
+<h3 id="momentum">Momentum</h3>
+<ul>
+<li>Consider a glancing elastic collision between two identical particles, $A$ and $B$. </li>
+<li>View the collision in two special frames: $A$'s frame, the frame moving along the $x$ axis with $A$, and $B$'s frame, the frame moving along the $x$ axis with $B$. </li>
+</ul>
+<p><img alt="Pasted image 20250323144946.png" src="assets/Pasted image 20250323144946.png" /></p>
+<ul>
+<li>Each particle has the same $y$ speed $u_o$ in its own frame before the collision. </li>
+<li>The relative $x$ velocity of the frames is $V$ and by the law of transformation of velocities, the $y$ velocity of the opposite particle in each frame is $u_o/\gamma = u_o \sqrt{1-V^2/c^2}$. </li>
+<li>Find a conserved quantity analogous to classical momentum. Suppose the momentum of an object moving with velocity $\textbf{w}$ is, 
+$$\textbf{p}=m(w)\textbf{w}$$</li>
+<li>The momentum is, in general, given by: 
+$$\textbf{p}=\frac{m_o \textbf{u}}{\sqrt{1-u^2/c^2}}=m\textbf{u}$$
+$$m=\frac{m_o}{\sqrt{1-u^2/c^2}}$$</li>
+</ul>
+<h3 id="energy">Energy</h3>
+<p>$$K_b-K_a=\int_a^b \frac{d\textbf{p}}{dt} \cdot d\textbf{r} = \int_a^b \frac{d}{dt}\left[\frac{m_o \textbf{u}}{\sqrt{1-u^2/c^2}}\right] \cdot \textbf{u} \cdot dt= \int_a^b \textbf{u} \cdot d\left[\frac{m_o \textbf{u}}{\sqrt{1-u^2/c^2}}\right]$$
+$$K = \frac{m_0 u^2}{\sqrt{1-u^2/c^2}}+m_0c^2 \sqrt{1-\frac{u^2}{c^2}}-m_0c^2=\frac{m_0c^2}{\sqrt{1-u^2/c^2}}-m_0c^2$$</p></body>
+</html>
