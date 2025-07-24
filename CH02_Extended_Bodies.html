@@ -1,0 +1,151 @@
+
+<html>
+  <head><meta charset="utf-8"/>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      packages: {'[+]': ['noerrors', 'noundefined']}
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'tex2jax_ignore'
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style>
+  /* Simple, legible table styling */
+  table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+  thead { background: #f2f2f2; }
+  th, td { border: 1px solid #bbb; padding: 0.45em 0.6em; text-align: left; }
+  tbody tr:nth-child(even) { background: #fafafa; }
+</style>
+<title>CH02_Extended_Bodies.md</title></head>
+  <body><a href='index.html'>← Back</a><hr/><h2 id="dynamics-of-a-system-of-particles">Dynamics of a System of Particles</h2>
+<ul>
+<li>Consider a system of $N$ particles with masses $m_1, m_2, m_3, ... m_N$. The position of the $j^{th}$ particle is $\textbf{r}_j$, the force is $\textbf{f}_j$ and its momentum is $\textbf{p}_j = m_j \dot{\textbf{r}_j}$. </li>
+</ul>
+<p>$$\textbf{f}_j = \frac{d\textbf{p}_j}{dt}$$</p>
+<ul>
+<li>The force on the particle $j$ can be split into internal forces (forces due to all other particles in the system) and external forces (forces due to sources outside the system). </li>
+</ul>
+<p>$$
+\textbf{f}_j^{\text{int}}+\textbf{f}_j^{\text{ext}} = \frac{d\textbf{p}_j}{dt}
+$$</p>
+<ul>
+<li>If we designate $\textbf{P}$ as the total momentum of the system  $\sum \textbf{p}<em>j$ and $\textbf{F}</em>{\text{ext}}$ as the single force acting on the whole system of particles:</li>
+</ul>
+<p>$$\textbf{F}_{\text{ext}}=\frac{d\textbf{P}}{dt}$$</p>
+<h2 id="conservation-of-momentum">Conservation of Momentum</h2>
+<ul>
+<li>For an isolated system, $\textbf{F}=0$ and $\frac{d\textbf{P}}{dt}=0$. The total momentum is constant no matter what.</li>
+</ul>
+<h3 id="spring-gun-recoil-example">Spring Gun Recoil Example</h3>
+<p>Problem: A loaded spring gun, initially at rest on a horizontal frictionless surface, fires a marble at angle of elevation $\theta$. The mass of the gun is $M$, the mass of the marble is $m$, and the muzzle velocity of the marble is $v_o$. What is the final motion of the gun? </p>
+<p><img alt="" src="assets/12.png" /></p>
+<p>Absence of horizontal external forces yields:</p>
+<p>$$\frac{dP_x}{dt}=0$$
+Hence $P_x$ is conserved:</p>
+<p>$$P_{x, \text{initial}}=P_{x, \text{final}}$$</p>
+<p>After the marble has left the muzzle, the gun recoils with some speed $V_f$. The subtle point here is there is a change in momentum for the gun as well when the marble and the gun lose contact. </p>
+<p>This means that the final horizontal speed of the marble relative to the gun is $v_o$, which means the final horizontal speed of the marble relative to a stationary observer would be $v_o\cos{\theta}-V_f$. Since the initial momentum is $0$. 
+$$0=m(v_o\cos{\theta-V_f})-MV_f \Rightarrow V_f = \frac{mv_o\cos{\theta}}{M+m}$$</p>
+<h2 id="impulse">Impulse</h2>
+<ul>
+<li>The integral form of the force-momentum relationship is: 
+$$\int_0^t \textbf{F} \cdot dt = \textbf{P}(t)-\textbf{P}(0)$$</li>
+<li>The integral is called impulse. </li>
+</ul>
+<h3 id="rubber-ball-rebound-example">Rubber Ball Rebound Example</h3>
+<p>Problem: A 0.2 kg rubber ball falls and rebounds with a speed of 8 m/s, remaining in contact with the floor for $10^{-3} s$. We analyze the force exerted by the floor.</p>
+<h4 id="momentum-change">Momentum Change</h4>
+<ul>
+<li>Before impact: $$ P_a = -1.6 $$ kgm/s</li>
+<li>After impact: $$ P_b = +1.6 $$ kg·m/s</li>
+<li>Change in momentum:<br />
+  $$ 
+  P_b - P_a = 3.2 \text{ kg·m/s}
+  $$</li>
+</ul>
+<p>Since impulse $\int F dt = \Delta P$, the average force exerted by the floor is:
+$$
+F_{\text{avg}} = \frac{3.2 \text{ kg·m/s}}{10^{-3} \text{ s}} = 3200 \text{ N}
+$$</p>
+<h4 id="accounting-for-gravity">Accounting for Gravity</h4>
+<p>We previously ignored gravity. The total force includes:
+$$
+F = F_{\text{floor}} + F_{\text{grav}}
+$$
+Since $$ F_{\text{grav}} = -Mgk $$, the impulse equation becomes:
+$$
+\int F_{\text{floor}} dt = 3.2 \text{ kg·m/s} + \int_{0}^{10^{-3}} (-Mg) dt
+$$
+Impulse due to gravity:
+$$
+\int_{0}^{10^{-3}} (-0.2 \times 9.8) dt = -1.96 \times 10^{-3} \text{ kg·m/s}
+$$
+This is negligible (less than 0.1% of the total impulse), confirming that contact forces during short collisions are dominant.</p>
+<h2 id="momentum-transport">Momentum Transport</h2>
+<h3 id="momentum-transfer-from-a-water-stream">Momentum Transfer from a Water Stream</h3>
+<p>A water stream pushes against a surface due to the momentum it transfers. If there is no counteracting force, the transferred momentum can cause motion.</p>
+<h4 id="impulse-on-a-droplet">Impulse on a Droplet</h4>
+<p>Model the stream as small uniform droplets of mass $m$, traveling at velocity $v_0$ and spaced $l$ apart. Assume they hit a surface without rebounding.</p>
+<p>The impulse on each droplet is:
+$$
+I_{\text{droplet}} = \int_{\text{collision}} F dt = \Delta p = m(v_f - v_0) = -m v_0
+$$</p>
+<p>By Newton’s third law, the impulse on the hand is:</p>
+<p>$$
+I_{\text{hand}} = m v_0
+$$</p>
+<p>indicating force in the direction of the droplet’s velocity.</p>
+<h4 id="average-force-calculation">Average Force Calculation</h4>
+<p>If multiple droplets hit per second, the average force felt is:
+$$
+F_{\text{avg}} T = \int_{\text{collision}} F dt
+$$</p>
+<p>Since $T = l/v_0$, we get:
+$$
+F_{\text{avg}} = \frac{m v_0}{T} = \frac{m}{l} v_0^2
+$$</p>
+<h4 id="alternative-derivation">Alternative Derivation</h4>
+<p>For a stream section of length $L$:
+- The number of droplets: $L/l$
+- Total momentum: $\Delta p = (L/l) m v_0$
+- Time for these to strike: $\Delta t = L/v_0$</p>
+<p><img alt="" src="assets/15.png" /></p>
+<ul>
+<li>Average force:
+  $$
+  F_{\text{avg}} = \frac{\Delta p}{\Delta t} = \frac{m}{l} v_0^2
+  $$</li>
+</ul>
+<h4 id="continuous-fluid-model">Continuous Fluid Model</h4>
+<p>For a fluid stream moving at $v$, define mass per unit length as $\lambda = m/l$. The momentum flux is:
+$$
+\frac{dp}{dt} = \lambda v^2
+$$
+If the stream stops upon impact, the force on the surface is:
+$$
+F = \lambda v^2
+$$</p>
+<h2 id="center-of-mass">Center of Mass</h2>
+<ul>
+<li>The center of mass of a system of particles or a continuous body is the weighted average position of the mass distribution. It is the point where the entire mass of the system can be considered to be concentrated for motion analysis.</li>
+<li>For a system of discrete masses:
+$$\bar{x}=\frac{\sum m_ix_i}{\sum m_i}$$
+    here, $x_i$ represents the coordinate of the $i$-th particle. </li>
+<li>For a continuous mass distribution:
+$$\frac{1}{M}\int x \sigma \cdot dA$$</li>
+<li>Example: Consider a rectangular lamina with side lengths $a$ and $b$ whose mass per unit area $\sigma$ varies as $\sigma=\sigma_o(xy/ab)$ where $\sigma_o$ is a constant. For determining the position of the center of mass: </li>
+</ul>
+<p>$$\textbf{R}=\frac{1}{M}\iint (x\hat{\textbf{i}}+y\hat{\textbf{j}})\sigma \cdot dx dy$$
+$$M=\int_0^b \int^a_0 \sigma \cdot dxdy = \int_0^b \int^a_0 \sigma_o \frac{xy}{ab} \cdot dxdy = \int_0^b \sigma_o \frac{ay}{2b} \cdot dy = \frac{1}{4}\sigma_o ab$$
+The $x$ component of $\textbf{R}$ is: 
+$$X=\frac{1}{M}\int_0^b \int_0^a x\sigma_o \frac{xy}{ab} \cdot dx dy = \frac{1}{M} \int_0^b \frac{\sigma_o ya^2}{3b} \cdot dy = \frac{4}{\sigma_o ab} \frac{\sigma_o a^2 b}{6} = \frac{2}{3}a$$
+And $Y=2/3 b$. </p>
+<hr /></body>
+</html>

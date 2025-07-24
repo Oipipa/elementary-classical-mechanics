@@ -1,0 +1,316 @@
+
+<html>
+  <head><meta charset="utf-8"/>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      packages: {'[+]': ['noerrors', 'noundefined']}
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'tex2jax_ignore'
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style>
+  /* Simple, legible table styling */
+  table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+  thead { background: #f2f2f2; }
+  th, td { border: 1px solid #bbb; padding: 0.45em 0.6em; text-align: left; }
+  tbody tr:nth-child(even) { background: #fafafa; }
+</style>
+<title>CH01_Kinematic_Foundations.md</title></head>
+  <body><a href='index.html'>← Back</a><hr/><h2 id="coordinate-systems">Coordinate Systems</h2>
+<p><img alt="Pasted image 20250723212515.png" src="assets/Pasted image 20250723212515.png" /></p>
+<ul>
+<li><strong>Cartesian</strong>: your standard $(x,y)$ coordinates. </li>
+</ul>
+<p>$$
+\text{Cartesian position}(x,y) = x\begin{pmatrix} 
+1 \\ 0
+\end{pmatrix} + y\begin{pmatrix} 
+0 \\ 1
+\end{pmatrix}
+$$</p>
+<ul>
+<li><strong>Polar</strong> a point in the plane is described by its <em>radial</em> distance $r$ from the origin and by the <em>polar</em> angle $\theta$ measured counter‑clockwise from the $x$‑axis. Position in polar coordinates is described using a single radial unit basis vector oriented by $\theta$. </li>
+</ul>
+<p>$$\text{Polar Position}(r,\theta)= r\begin{pmatrix} \cos{\theta} \\ \sin{\theta} \end{pmatrix}$$</p>
+<ul>
+<li>The vector $\cos\theta \hat{\textbf{i}}+ \sin\theta \hat{\textbf{j}}$ is the radial basis $\hat{\textbf{r}}$; by the Pythagorean identity, it is a unit vector. It is always orthogonal to it's tangential counterpart $\hat{\boldsymbol{\theta}}$. </li>
+<li>Evidently, the basis vectors $\hat{\textbf{i}}$ and $\hat{\textbf{j}}$ in Cartesian coordinates have fixed directions, whereas the basis vectors in plane polar coordinates, $\hat{\textbf{r}}$ and $\hat{\boldsymbol \theta}$, vary with the angle $\theta$.</li>
+</ul>
+<h2 id="motion-in-plane-polar-coordinates">Motion in Plane Polar Coordinates</h2>
+<p><img alt="" src="assets/1.png" /></p>
+<p>Basis vectors of polar coordinates are:</p>
+<p>$$
+\hat{\mathbf{r}}=\cos\theta\,\hat{\mathbf{i}}+\sin\theta\,\hat{\mathbf{j}},
+\qquad
+\hat{\boldsymbol\theta}=-\sin\theta\,\hat{\mathbf{i}}+\cos\theta\,\hat{\mathbf{j}}
+$$</p>
+<p>The basis ${\hat{\mathbf{r}},\hat{\boldsymbol\theta}}$ rotates with the particle, so its time derivatives are non‑zero even if $r$ and $\theta$ are constant. They can be derived like so: </p>
+<p>$$
+\frac{d\hat{\mathbf{r}}}{dt}= \dot{\theta}\,\hat{\boldsymbol\theta},
+\qquad
+\frac{d\hat{\boldsymbol\theta}}{dt}= -\dot{\theta}\,\hat{\mathbf{r}}.
+$$<br />
+And hence, position, velocity and acceleration can be derived as: </p>
+<p>$$
+\mathbf{r}=x\hat{\mathbf{i}}+y\hat{\mathbf{j}}=r\hat{\mathbf{r}}
+$$<br />
+$$
+\begin{aligned}
+\textbf{v} = \frac{d\textbf{r}}{dt} = \frac{dr\hat{\textbf{r}}}{dt} = \hat{\textbf{r}}\frac{dr}{dt} + r\frac{d\hat{\textbf{r}}}{dt} \\
+\therefore \textbf{v} = \dot{r}\hat{\textbf{r}} + r\dot{\theta}\hat{\boldsymbol{\theta}}
+\end{aligned}
+$$<br />
+$$
+\begin{aligned}
+\textbf{a} = \frac{d\textbf{v}}{dt} = \frac{d(\dot{r}\hat{\textbf{r}})}{dt}+ \frac{d(r\dot{\theta}\hat{\boldsymbol{\theta}})}{dt} = \ddot{r}\hat{\textbf{r}} + \dot{r} \dot{\theta}\hat{\boldsymbol\theta}+r\dot{\theta}\frac{d\hat{\boldsymbol \theta}}{dt} + r\ddot{\theta} \hat{\boldsymbol \theta} + \dot{r}\dot{\theta} \hat{\boldsymbol \theta}\\
+\therefore \textbf{a} = (\ddot{r}-r\dot{\theta}^2)\hat{\textbf{r}} + ()
+\end{aligned}
+$$</p>
+<h3 id="motion-in-cylindrical-coordinates">Motion in Cylindrical Coordinates</h3>
+<ul>
+<li>Cylindrical coordinate is the natural 3D extension to polar coordinates where a vertical $z$ component is introduced for the extra dimension extending $(r,\theta)$ to $(r,\theta,z)$.</li>
+</ul>
+<p><img alt="Pasted image 20250723224317.png" src="assets/Pasted image 20250723224317.png" /></p>
+<ul>
+<li>The basis vectors are expressed as:
+$$\begin{align}
+\hat{\boldsymbol{\rho}} &amp;= \cos\phi\, \hat{\boldsymbol{i}} + \sin\phi\, \hat{\boldsymbol{j}} \\
+\hat{\boldsymbol{\phi}} &amp;= -\sin\phi\, \hat{\boldsymbol{i}} + \cos\phi\, \hat{\boldsymbol{j}} \\
+\hat{\boldsymbol{k}} &amp;= \hat{\boldsymbol{k}}
+\end{align}$$</li>
+<li>And the position, velocity and acceleration are derived as:</li>
+</ul>
+<p>$$\textbf{r} = \rho\, \hat{\boldsymbol{\rho}} + z\, \hat{\boldsymbol{k}}$$</p>
+<p>$$\textbf{v} = \dot{\rho}\, \hat{\boldsymbol{\rho}} + \rho\, \dot{\phi}\, \hat{\boldsymbol{\phi}} + \dot{z}\, \hat{\boldsymbol{k}}
+$$</p>
+<p>$$\textbf{a} = \left( \ddot{\rho} - \rho\, \dot{\phi}^2 \right)\, \hat{\boldsymbol{\rho}} + \left( \rho\, \ddot{\phi} + 2\, \dot{\rho}\, \dot{\phi} \right)\, \hat{\boldsymbol{\phi}} + \ddot{z}\, \hat{\boldsymbol{k}}
+$$</p>
+<h3 id="motion-in-spherical-coordinates">Motion in Spherical Coordinates</h3>
+<ul>
+<li>Spherical coordinates are another generalization to 3 dimensional space that uses three parameters: $r$, $\theta$ and $\phi$: </li>
+</ul>
+<p><img alt="Pasted image 20250723225046.png" src="assets/Pasted image 20250723225046.png" /></p>
+<p>$$
+\begin{align}
+r &amp;= \sqrt{x^2 + y^2 + z^2} \\
+\phi &amp;= \cos^{-1} \left( \frac{z}{r} \right) \\
+\theta &amp;= \tan^{-1} \left( \frac{y}{x} \right)
+\end{align}
+$$</p>
+<ul>
+<li>The basis vectors are expressed as:</li>
+</ul>
+<p>$$
+\begin{align}
+\hat{\boldsymbol{r}} = \sin\phi \cos\theta\, \hat{\boldsymbol{i}} + \sin\phi \sin\theta\, \hat{\boldsymbol{j}} + \cos\phi\, \hat{\boldsymbol{k}} \\
+\hat{\boldsymbol{\phi}} = \cos\phi \cos\theta\, \hat{\boldsymbol{i}} + \cos\phi \sin\theta\, \hat{\boldsymbol{j}} - \sin\phi\, \hat{\boldsymbol{k}} \\
+\hat{\boldsymbol{\theta}} = -\sin\theta\, \hat{\boldsymbol{i}} + \cos\theta\, \hat{\boldsymbol{j}}
+\end{align}
+$$</p>
+<ul>
+<li>The position vector is analogous to the one defined in polar coordinates: </li>
+</ul>
+<p>$$\textbf{r} = r\, \hat{\boldsymbol{r}}$$</p>
+<ul>
+<li>And the velocity/acceleration vectors are derived as:</li>
+</ul>
+<p>$$
+\textbf{v} = \dot{r}\, \hat{\boldsymbol{r}} + r\, \dot{\phi}\, \hat{\boldsymbol{\phi}} + r\, \sin\phi\, \dot{\theta}\, \hat{\boldsymbol{\theta}}
+$$</p>
+<p>$$\textbf{a}=( \ddot{r} - r\, \dot{\phi}^2 - r\, \sin^2\phi\, \dot{\theta}^2)\hat{\boldsymbol{r}}+ ( r\, \ddot{\phi} + 2\, \dot{r}\, \dot{\phi} - r\, \sin\phi\, \cos\phi\, \dot{\theta}^2)\, \hat{\boldsymbol{\phi}}$$
+$$+( r\, \sin\phi\, \ddot{\theta} + 2\, \dot{r}\, \sin\phi\, \dot{\theta} + 2\, r\, \cos\phi\, \dot{\phi}\, \dot{\theta})\, \hat{\boldsymbol{\theta}}$$</p>
+<h2 id="dynamics">Dynamics</h2>
+<h3 id="newtons-laws-revisited">Newton’s Laws Revisited</h3>
+<p>First Law: A body free of <em>net</em> external force moves at constant velocity <em>in an inertial frame</em>.  The law simultaneously defines what we mean by “inertial.”</p>
+<p>Second Law: For a possibly <em>variable</em> mass system (e.g. rocket),  </p>
+<p>$$
+\mathbf{F}= \frac{d\mathbf{p}}{dt}
+          = \frac{d}{dt}(m\mathbf{v})
+          = m\mathbf{a} + \mathbf{v}\,\frac{dm}{dt}.
+$$  </p>
+<p>When $dm/dt=0$ this reduces to the familiar $\mathbf{F}=m\mathbf{a}$.  </p>
+<p>Third Law: For each action $F_{ba}$ exerted by body <em>b</em> on body <em>a</em> there is an equal and opposite reaction $F_{ab}=-F_{ba}$.  In <em>field</em> language (gravity, electrostatics) the “other body” can be viewed as the field source, but the law remains intact.</p>
+<h3 id="inertial-and-noninertial-frames">Inertial and Non‑inertial Frames</h3>
+<p>Let the origin of frame $S'$ move with $\mathbf{R}(t)$ relative to inertial $S$.  A particle of <em>true</em> position $\mathbf{r}$ has <em>apparent</em> position $\mathbf{r}'=\mathbf{r}-\mathbf{R}$.  Differentiating twice:</p>
+<p>$$
+\mathbf{a} = \mathbf{a}' + \ddot{\mathbf{R}}
+$$  </p>
+<p>so in $S'$ Newton’s second law reads  </p>
+<p>$$
+m\mathbf{a}'=\mathbf{F}-m\ddot{\mathbf{R}}.
+$$  </p>
+<p>The extra term $-m\ddot{\mathbf{R}}$ is the fictitious (d’Alembert) force needed to <em>restore</em> Newton’s law inside the accelerating frame.</p>
+<h2 id="galilean-transformations-and-relative-motion">Galilean Transformations and Relative Motion</h2>
+<p>Two inertial observers, $S$ and $S'$, share the time coordinate $t$ but their spatial coordinates differ by  </p>
+<p>$$
+\mathbf{r}'=\mathbf{r}-\mathbf{V}t,
+$$  </p>
+<p>where $\mathbf{V}$ is the constant relative velocity of the origins.  Velocities and accelerations transform as  </p>
+<p>$$
+\mathbf{v}'=\mathbf{v}-\mathbf{V},
+\qquad
+\mathbf{a}'=\mathbf{a}.
+$$ </p>
+<h3 id="freight-train-internal-tensions">Freight Train: Internal Tensions</h3>
+<p><img alt="" src="assets/4.png" /> <img alt="" src="assets/5.png" /></p>
+<p>Three identical cars of mass $M$ are pulled by a locomotive with force $F$.  With negligible rolling resistance the train accelerates at  </p>
+<p>$$
+a=\frac{F}{3M}.
+$$  </p>
+<p>Because the cars form a <em>rigid</em> train, each car shares this $a$.  Free‑body analysis gives the tensions:</p>
+<ul>
+<li>Rear coupler: $F_1 = Ma = \dfrac{F}{3}$  </li>
+<li>Middle coupler: $F_2 = 2Ma = \dfrac{2F}{3}$</li>
+</ul>
+<p>The pattern generalizes: in a train of $N$ equal cars, the tension $F_n$ that pulls the <em>last</em> $n$ cars is  </p>
+<p>$$
+F_n = \frac{n}{N}\,F.
+$$</p>
+<h3 id="constraint-relations">Constraint Relations</h3>
+<h4 id="wedge-and-block">Wedge and Block</h4>
+<p><img alt="" src="assets/7.png" /></p>
+<p><img alt="" src="assets/8.png" /></p>
+<p>The wedge of mass $M$ slides frictionlessly on the table; the block of mass $m$ slides on the wedge surface (inclination $\theta$).  With coordinates $X(t)$ for the wedge’s CM and $(x,y)$ for the block relative to the table, geometry of the right triangle gives  </p>
+<p>$$
+(x-X)=(h-y)\cot\theta.
+$$  </p>
+<p>Differentiating twice:</p>
+<p>$$
+\ddot{x}-\ddot{X}=-\ddot{y}\cot\theta.
+$$  </p>
+<p>Because this relation derives <em>solely</em> from geometry, it remains valid regardless of the forces applied.  In Lagrange’s formalism it constitutes a <em>holonomic</em>, scleronomous constraint.</p>
+<h4 id="pulley-with-accelerating-support">Pulley with Accelerating Support</h4>
+<p><img alt="" src="assets/9.png" /></p>
+<p>Two masses $m_1,m_2$ are joined by an inextensible string over a pulley that itself accelerates upward with $\mathbf{A}=A\hat{\mathbf{j}}$.  Measuring downward displacements $y_1,y_2$ from the support and $y_p$ for the pulley’s rim,</p>
+<p>$$
+\ell = \pi R + (y_p-y_1) + (y_p - y_2),
+$$  </p>
+<p>so  </p>
+<p>$$
+0 = 2\ddot{y}_p - \ddot{y}_1 - \ddot{y}_2
+\quad\Longrightarrow\quad
+A = \frac{1}{2}(\ddot{y}_1+\ddot{y}_2).
+$$  </p>
+<p>If $A=0$ we recover the common Atwood relation $\ddot{y}_1=-\ddot{y}_2$.</p>
+<p>A <em>differential</em> derivation treats an infinitesimal string element of length $ds$ and tension $T(s)$; equilibrium of each element plus inextensibility leads to constant tension and the above global relation.</p>
+<h3 id="the-whirling-block">The Whirling Block</h3>
+<p><img alt="" src="assets/11.png" /></p>
+<p>Block A (mass $M_A$) rotates on a frictionless table of radius $r$; block B (mass $M_B$) hangs below through a small hole.  At $t=0$ B is released.  With cylindrical coordinates for A and vertical $z$ for B, the coupled equations are  </p>
+<p>$$
+\begin{aligned}
+-T &amp;= M_A(\ddot{r}-r\dot{\theta}^2),\
+0 &amp;= M_A(r\ddot{\theta}+2\dot{r}\dot{\theta}),\
+M_Bg-T &amp;= M_B\ddot{z}.
+\end{aligned}
+$$  </p>
+<p>The string constraint $r+z=\ell$ implies $\ddot{z}=-\ddot{r}$.  Eliminating $T$ yields the <em>instantaneous</em> vertical acceleration of B right after release:</p>
+<p>$$
+\ddot{z}(0)=\frac{M_Bg-M_Ar\omega_0^2}{M_A+M_B},
+$$  </p>
+<p>where $\omega_0$ is the initial angular speed of A.  Centripetal <em>demand</em> $M_Ar\omega_0^2$ can partially or fully counteract gravity depending on parameters—a classic demonstration of “transverse” inertial effects.</p>
+<h2 id="forces-and-constraints">Forces and Constraints</h2>
+<h3 id="normal-forces">Normal Forces</h3>
+<p>At every point of contact a surface exerts a force normal to itself on the body.  Let the local surface element have outward unit normal $\hat{\mathbf{n}}$ and differential area $dA$.  The <em>pressure</em> $p(\mathbf{r})$ generates an infinitesimal normal force  </p>
+<p>$$
+d\mathbf{F}_N = p(\mathbf{r})\,\hat{\mathbf{n}}\,dA.
+$$  </p>
+<p>For a perfectly rigid, idealized constraint we replace this continuously distributed load by a single reaction $N$ acting through the instantaneous line or point of contact.  On an incline of angle $\alpha$ the normal magnitude is  </p>
+<p>$$
+N = mg\cos\alpha
+$$  </p>
+<p>when no other vertical forces act.  In accelerating frames we instead project the <em>effective</em> weight $m(\mathbf{g}-\ddot{\mathbf{R}})$ on the surface normal.</p>
+<blockquote>
+<p>Differentials &amp; Contact Mechanics Real contacts deform over a microscopic region; integrating $d\mathbf{F}_N$ over the <em>Hertzian</em> contact patch determines both $N$ and torque that can influence rolling resistance.</p>
+</blockquote>
+<h3 id="dry-friction">Dry Friction</h3>
+<p>The empirical Amontons–Coulomb law divides friction into <em>static</em> and <em>kinetic</em> regimes:</p>
+<ul>
+<li>Static range: $0\le f_s \le \mu_s N$  </li>
+<li>Kinetic (sliding): $f_k = \mu_k N,\;$ opposite $\mathbf{v}_{\text{rel}}$</li>
+</ul>
+<p>with $\mu_s&gt;\mu_k$ for virtually all materials.</p>
+<h4 id="differential-work">Differential work</h4>
+<p>During sliding, the elemental work done by kinetic friction over <em>infinitesimal</em> displacement $d\mathbf{r}$ is  </p>
+<p>$$
+dW_f = \mathbf{f}_k\cdot d\mathbf{r}
+     = -\mu_k N\,ds,
+$$  </p>
+<p>where $ds=|d\mathbf{r}|$.  Integrating along the path gives the macroscopic energy dissipated as heat.</p>
+<h4 id="friction-on-an-accelerating-wedge">Friction on an accelerating wedge</h4>
+<p>For the block‑and‑wedge system, introduce a coefficient of friction $\mu$.  Resolving forces parallel ($\parallel$) and perpendicular ($\perp$) to the incline:</p>
+<p>$$
+m\ddot{s}
+ = mg\sin\theta - \mu (N)
+ = mg\sin\theta - \mu m(g\cos\theta + \ddot{X}\sin\theta),
+$$  </p>
+<p>where $\ddot{s}$ is the acceleration along the surface and $\ddot{X}$ is the horizontal acceleration of the wedge.  The extra $\ddot{X}\sin\theta$ term arises from the fictitious force in the accelerating frame of the wedge.</p>
+<h3 id="viscous-drag">Viscous Drag</h3>
+<p>In a fluid of viscosity $\eta$, a small sphere of radius $a$ moving slowly (low Reynolds number) experiences Stokes drag</p>
+<p>$$
+\mathbf{F}_v = -6\pi \eta a\,\mathbf{v}.
+$$  </p>
+<p>The <em>linear</em> dependence enables closed‑form solutions for many damped oscillation problems.  For high‑speed or turbulent motion, a quadratic drag model $F_v=-C_D\rho A v^2/2$ is more appropriate; the constants are fixed experimentally.</p>
+<h2 id="work-and-energy">Work and Energy</h2>
+<h3 id="workenergy-theorem-in-one-dimension">Work–Energy Theorem in One Dimension</h3>
+<p>Start with $m\dot{v}=F(x)$ :  </p>
+<p>$$
+m\int_{v_a}^{v_b} v\,dv = \int_{x_a}^{x_b} F(x)\,dx
+\;\;\Longrightarrow\;\;
+\frac{1}{2}m(v_b^2-v_a^2) = W_{ba}.
+$$  </p>
+<p>Here  </p>
+<p>$$
+K=\tfrac12 mv^2,
+\qquad
+W_{ba}= \int_{x_a}^{x_b} F\,dx.
+$$</p>
+<h3 id="multidimensional-generalization">Multidimensional generalization</h3>
+<p>For a trajectory $C$ in $\mathbb{R}^3$,</p>
+<p>$$
+W_{ba} = \int_C \mathbf{F}\cdot d\mathbf{r},
+$$  </p>
+<p>and using $\mathbf{F}=m\dot{\mathbf{v}}$ with $d\mathbf{r}=\mathbf{v}\,dt$,</p>
+<p>$$
+W_{ba}
+ = m\int_{t_a}^{t_b} \dot{\mathbf{v}}\cdot\mathbf{v}\,dt
+ = \frac{m}{2}\int_{t_a}^{t_b}\frac{d}{dt}(v^2)\,dt
+ = K_b-K_a.
+$$  </p>
+<blockquote>
+<p>Infinitesimal form $dW = \mathbf{F}\cdot d\mathbf{r}$ and $dK = m\mathbf{v}\cdot d\mathbf{v}$ reveal the theorem as a point‑wise identity.</p>
+</blockquote>
+<h3 id="conservative-forces-and-potential-energy">Conservative forces and potential energy</h3>
+<p>If $\mathbf{F}$ is conservative, $\mathbf{F}=-\nabla U$, then  </p>
+<p>$$
+W_{ba}
+ = -\int_C \nabla U\cdot d\mathbf{r}
+ = -(U_b-U_a),
+$$  </p>
+<p>so $K+U=E$ is constant.  Line integrals reduce to potential differences independent of path.</p>
+<h3 id="power">Power</h3>
+<p>The instantaneous power delivered by a force is</p>
+<p>$$
+P = \mathbf{F}\cdot\mathbf{v}
+  = \frac{dW}{dt}
+  = \frac{dK}{dt}.
+$$  </p>
+<p>For torque $\boldsymbol{\tau}$ acting on a rigid body with angular velocity $\boldsymbol{\omega}$,  </p>
+<p>$$
+P = \boldsymbol{\tau}\cdot\boldsymbol{\omega}.
+$$  </p>
+<h3 id="infinitesimal-elements-in-continuous-media">Infinitesimal elements in continuous media</h3>
+<p>For strings, rods, or fluids one divides the body into differential elements of length $ds$, area $dA$, or volume $dV$.  Typical examples:</p>
+<ul>
+<li><em>Tension</em>: $dT = \lambda a\,ds$  </li>
+<li><em>Pressure force</em>: $d\mathbf{F} = -p\,\hat{\mathbf{n}}\,dA$  </li>
+<li><em>Viscous stress</em>: $d\mathbf{F} = \boldsymbol{\sigma}\cdot\hat{\mathbf{n}}\,dA$ with $\boldsymbol{\sigma}$ depending on velocity gradients $\partial v_i/\partial x_j$.</li>
+</ul></body>
+</html>
